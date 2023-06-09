@@ -12,6 +12,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+a{
+  /* 默认配置 */
+  color: #777777;
+}
+
 body {
   margin: 0;
 }

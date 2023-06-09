@@ -41,9 +41,9 @@ function toClose() {
       <div class="icon-item" @click="toMin">
         <i class="iconfont icon-min"></i>
       </div>
-      <div class="icon-item" @click="toMax">
+      <!-- <div class="icon-item" @click="toMax">
         <i class="iconfont icon-max"></i>
-      </div>
+      </div> -->
       <div class="icon-item" @click="toClose">
         <i class="iconfont icon-close"></i>
       </div>
@@ -52,6 +52,10 @@ function toClose() {
 </template>
 
 <style>
+a {
+  text-decoration: none;
+}
+
 .header_menu {
   /* 默认情况下, 无边框窗口是不可拖拽的。 应用程序需要在 CSS 中指定 -webkit-app-region: drag 来告诉 Electron 哪些区域是可拖拽的（如操作系统的标准标题栏），在可拖拽区域内部使用 -webkit-app-region: no-drag 则可以将其中部分区域排除。 请注意, 当前只支持矩形形状。 */
   -webkit-app-region: drag;
@@ -66,9 +70,9 @@ function toClose() {
   width: calc(100vw - 10px);
   height: 34px;
   line-height: 34px;
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  left: 0;
+  left: 0; */
   background-color: #fafafa;
 }
 
@@ -92,6 +96,7 @@ function toClose() {
 
 .icon-item {
   /* margin-left: 10px; */
+  color: #333;
   text-align: center;
   cursor: pointer;
   -webkit-app-region: no-drag;

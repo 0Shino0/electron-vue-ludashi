@@ -5,6 +5,9 @@ import electron from 'vite-plugin-electron'
 import renderer from 'vite-plugin-electron-renderer'
 import pkg from './package.json'
 
+import path from 'path' // 用于路径
+const resolve = (dir: string) => path.join(__dirname, dir)
+
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
   rmSync('dist-electron', { recursive: true, force: true })
@@ -67,6 +70,20 @@ export default defineConfig(({ command }) => {
         port: +url.port,
       }
     })(),
+    resolve: {
+      // 配置路径别名
+      alias: {
+        '@': resolve('src'), // 源码根目录
+        '@img': resolve('src/assets/img'), // 图片
+        '@less': resolve('src/assets/less'), // 预处理器
+        '@libs': resolve('src/libs'), // 本地库
+        '@plugins': resolve('src/plugins'), // 本地插件
+        '@cp': resolve('src/components'), // 公共组件
+        '@views': resolve('src/views'), // 路由组件
+      },
+      //配置文件扩展名
+      extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    },
     clearScreen: false,
   }
 })

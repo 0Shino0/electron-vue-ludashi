@@ -45,7 +45,7 @@ export interface HardwareMember {
  * @param seconds 
  * @returns 
  */
-var dealTime = (seconds: number): string => {
+export var dealTime = (seconds: number): string => {
   var seconds = seconds | 0;
   var day: number | string = (seconds / (3600 * 24)) | 0;
   var hours: number | string = ((seconds - day * 3600) / 3600) | 0;
@@ -62,7 +62,7 @@ var dealTime = (seconds: number): string => {
  * @param mem 
  * @returns 
  */
-var dealMem = (mem: number): string => {
+export var dealMem = (mem: number): string => {
   let G: number | string = 0;
   let M: number | string = 0;
   let KB: number | string = 0;
@@ -126,6 +126,8 @@ export function getHardwareInfo(): HardwareMember {
   // hardwareObj.sysMen.freeMem = os.freemem();
   hardwareObj.sysMen.totalMem = dealMem(os.totalmem());
   hardwareObj.sysMen.freeMem = dealMem(os.freemem());
+  // console.log(1 - (os.freemem() / os.totalmem()));
+
   // console.log("内存大小：" + dealMem(hardwareObj.sysMen.totalMem) + ' 空闲内存：' + dealMem(hardwareObj.sysMen.freeMem));
 
   //cpu

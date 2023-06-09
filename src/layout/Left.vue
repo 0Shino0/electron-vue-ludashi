@@ -18,7 +18,7 @@
   /* height: 500px; */
   height: calc(100vh - 34px);
   background-color: #fafafa;
-  margin-top: 34px;
+  /* margin-top: 34px; */
 }
 
 .left_items_center {
