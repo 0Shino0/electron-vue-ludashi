@@ -30,7 +30,7 @@
     "sass": "^1.62.1",
     "typescript": "^5.0.2",
     "vite": "^4.1.4",
-    "vite-plugin-electron": "^0.11.2",
+    "vite-plugin-electron": "^0.12.0",
     "vite-plugin-electron-renderer": "^0.14.1",
     "vue": "^3.2.47",
     "vue-router": "^4.2.2",
